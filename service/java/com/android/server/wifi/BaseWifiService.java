@@ -307,6 +307,11 @@ public class BaseWifiService extends IWifiManager.Stub {
     }
 
     @Override
+    public String getCapabilities(String capaType) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
     public DhcpInfo getDhcpInfo(String packageName) {
         throw new UnsupportedOperationException();
     }
@@ -776,6 +781,16 @@ public class BaseWifiService extends IWifiManager.Stub {
     @Override
     public List<WifiAvailableChannel> getUsableChannels(
             int band, int mode, int filter) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public int getSoftApWifiStandard() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public boolean isVht8ssCapableDevice() {
         throw new UnsupportedOperationException();
     }
 }
