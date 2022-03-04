@@ -1886,21 +1886,6 @@ public class WifiManager {
     }
 
     /**
-    * Get SoftAp Wi-Fi generation.
-    *
-    * @return Wi-Fi generation if SoftAp enabled or -1.
-    *
-    * @hide no intent to publish
-    */
-    public int getSoftApWifiStandard() {
-        try {
-            return mService.getSoftApWifiStandard();
-        } catch (RemoteException e) {
-            throw e.rethrowFromSystemServer();
-        }
-    }
-
-    /**
      * Internal method for doing the RPC that creates a new network description
      * or updates an existing one.
      *
@@ -6498,22 +6483,6 @@ public class WifiManager {
     }
 
     /**
-     * Get driver Capabilities.
-     *
-     * @param capaType ASCII string, capability type ex: key_mgmt.
-     * @return String of capabilities from driver for type capaParameter.
-     * {@hide}
-     */
-    @NonNull
-    public String getCapabilities(@NonNull String capaType) {
-        try {
-            return mService.getCapabilities(capaType);
-        } catch (RemoteException e) {
-            throw e.rethrowFromSystemServer();
-        }
-    }
-
-    /**
      * @return true if this device supports WPA3-Personal SAE
      */
     public boolean isWpa3SaeSupported() {
@@ -8201,21 +8170,6 @@ public class WifiManager {
         try {
             return mService.getUsableChannels(band, mode,
                     WifiAvailableChannel.getUsableFilter());
-        } catch (RemoteException e) {
-            throw e.rethrowFromSystemServer();
-        }
-    }
-
-     /**
-      * Get device VHT 8SS capability info.
-      *
-      * @return true if device supports VHT 8SS or false.
-      *
-      * @hide no intent to publish
-      */
-    public boolean isVht8ssCapableDevice() {
-        try {
-            return mService.isVht8ssCapableDevice();
         } catch (RemoteException e) {
             throw e.rethrowFromSystemServer();
         }

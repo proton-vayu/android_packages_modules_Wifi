@@ -593,9 +593,6 @@ public class WifiP2pManager {
     /** @hide */
     public static final int RESPONSE_DEVICE_INFO                    = BASE + 98;
 
-    /** @hide */
-    public static final int SET_WFDR2_INFO                          = BASE + 99;
-
     /**
      * Create a new WifiP2pManager instance. Applications use
      * {@link android.content.Context#getSystemService Context.getSystemService()} to retrieve
@@ -1714,18 +1711,6 @@ public class WifiP2pManager {
         c.mAsyncChannel.sendMessage(SET_WFD_INFO, 0, c.putListener(listener), wfdInfo);
     }
 
-    /** @hide */
-    public void setWFDR2Info(
-            @NonNull Channel c, @NonNull WifiP2pWfdInfo wfdInfo,
-            @Nullable ActionListener listener) {
-        checkChannel(c);
-        try {
-            mService.checkConfigureWifiDisplayPermission();
-        } catch (RemoteException e) {
-            e.rethrowFromSystemServer();
-        }
-        c.mAsyncChannel.sendMessage(SET_WFDR2_INFO, 0, c.putListener(listener), wfdInfo);
-    }
 
     /**
      * Delete a stored persistent group from the system settings.

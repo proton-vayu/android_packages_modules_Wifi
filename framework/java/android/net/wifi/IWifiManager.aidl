@@ -245,8 +245,6 @@ interface IWifiManager
 
     void unregisterTrafficStateCallback(in ITrafficStateCallback callback);
 
-    String getCapabilities(String capaType);
-
     void registerNetworkRequestMatchCallback(in INetworkRequestMatchCallback callback);
 
     void unregisterNetworkRequestMatchCallback(in INetworkRequestMatchCallback callback);
@@ -339,8 +337,4 @@ interface IWifiManager
     void flushPasspointAnqpCache(String packageName);
 
     List<WifiAvailableChannel> getUsableChannels(int band, int mode, int filter);
-
-    int getSoftApWifiStandard();
-
-    boolean isVht8ssCapableDevice();
 }

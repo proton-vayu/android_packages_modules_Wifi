@@ -3375,10 +3375,6 @@ public class WifiServiceImpl extends BaseWifiService {
         return 0;
     }
 
-    public String getCapabilities(String capaType) {
-        return "";
-    }
-
      /**
      * Get the country code
      * @return Get the best choice country code for wifi, regardless of if it was set or
@@ -5197,24 +5193,6 @@ public class WifiServiceImpl extends BaseWifiService {
             mLog.info("isAutoWakeupEnabled uid=%").c(Binder.getCallingUid()).flush();
         }
         return mWifiThreadRunner.call(()-> mWifiInjector.getWakeupController().isEnabled(), false);
-    }
-
-    /*
-     * Gets SoftAP Wi-Fi Standard
-     * @return Wi-Fi standard if SoftAp enabled or -1.
-     */
-    @Override
-    public int getSoftApWifiStandard() {
-        return -1;
-    }
-
-    /*
-     * Check if the driver supports 11ax ready
-     * @return {true} if supported, {false} otherwise.
-     */
-    @Override
-    public boolean isVht8ssCapableDevice() {
-        return false;
     }
 
     /**
